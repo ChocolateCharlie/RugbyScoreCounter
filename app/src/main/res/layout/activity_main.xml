@@ -1,18 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<!-- RUGBY SCORE COUNTER LAYOUT -->
+<!-- By : ChocolateCharlie -->
+<!-- Last Updated : 04 - 01 - 2018 -->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.rugbyscorecounter.MainActivity">
+    tools:context="com.example.rugbyscorecounter.MainActivity" >
 
-    <TextView
+    <!-- Scoring views and buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <!-- Team A -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp" >
+
+            <!-- Name of the team -->
+            <TextView
+                android:text="Team A"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="14sp"
+                android:textColor="#616161" />
+
+            <!-- Current score -->
+            <TextView
+                android:id="@+id/team_a_score"
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:gravity="center"
+                android:fontFamily="sans-serif-light"
+                android:textSize="56sp"
+                android:textColor="#000" />
+
+            <!-- Try button -->
+            <Button
+                android:text="Try"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:onClick="addFiveForTeamA" />
+
+            <!-- Conversion button -->
+            <Button
+                android:text="Conversion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:onClick="addTwoForTeamA" />
+
+            <!-- Drop goal button -->
+            <Button
+                android:text="Drop goal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:onClick="addThreeForTeamA" />
+
+            <!-- Penalty kick button -->
+            <Button
+                android:text="Penalty kick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:onClick="addThreeForTeamA" />
+
+        </LinearLayout>
+
+        <!-- Separator -->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray" />
+
+        <!-- Team B -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp" >
+
+            <!-- Name of the team -->
+            <TextView
+                android:text="Team B"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="14sp"
+                android:textColor="#616161" />
+
+            <!-- Current score -->
+            <TextView
+                android:id="@+id/team_b_score"
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:gravity="center"
+                android:fontFamily="sans-serif-light"
+                android:textSize="56sp"
+                android:textColor="#000" />
+
+            <!-- Try button -->
+            <Button
+                android:text="Try"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:onClick="addFiveForTeamB" />
+
+            <!-- Conversion button -->
+            <Button
+                android:text="Conversion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:onClick="addTwoForTeamB" />
+
+            <!-- Drop goal button -->
+            <Button
+                android:text="Drop goal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:onClick="addThreeForTeamB" />
+
+            <!-- Penalty kick button -->
+            <Button
+                android:text="Penalty kick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:onClick="addThreeForTeamB" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Reset button -->
+    <Button
+        android:text="Reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32sp"
+        android:onClick="resetScores"/>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
